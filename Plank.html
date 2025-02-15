@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  แพลงก์(Plank)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+        .container {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+        }
+        .text-box {
+            background: linear-gradient(to right, #5f72be, #9b23ea);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px; /* ขยายขนาด */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+        }
+        img {
+            width: 50%;
+            max-width: 400px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 20px; /* ขยายขนาด */
+            color: #ffffff;
+            line-height: 1.8;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3); /* ปรับพื้นหลังให้มืดขึ้นเพื่อชัดขึ้น */
+            padding: 12px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 28px;
+            font-size: 20px; /* ขยายขนาด */
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            text-decoration: none;
+        }
+
+        /* เอฟเฟกต์หิมะตก */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #e0f7fa;
+            font-size: 14px; /* เพิ่มขนาดเล็กน้อย */
+            opacity: 0.8;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="text-box">
+        <h1>  แพลงก์(Plank)</h1>
+    </div>
+    
+    <img src="https://png.pngtree.com/png-vector/20230124/ourmid/pngtree-push-ups-flat-cartoon-illustration-png-image_6568111.png" alt="ตัวอย่างรูปภาพ">
+    
+    <p>⭐ <strong>Progressive Overload</strong>:การทำท่าแพลงก์ (Plank)
+ช่วยเสริมสร้างระบบการเผาผลาญ และลดไขมัน โดยเป็นการใช้งานกล้ามเนื้อบริเวณหน้าท้องที่เรียกว่า Transversus abdominis ซึ่งเป็นกล้ามเนื้อบริเวณท้องชั้นในที่มีหน้าที่เสมือนผ้ารัดท้องเอาไว้เพื่อช่วยพยุงอวัยวะภายใน ช่วยจัดแนวกระดูกสันหลังให้อยู่ในแนวตรง และช่วยทรงตัวเวลาเดินอีกด้วย</p>
+	<p>⭐ <strong>Progressive Overload</strong>:ารเพิ่มความแข็งแรงและสร้างกล้ามเนื้อแต่ละส่วน โดยบางคนอาจทำหลายเซ็ต เซ็ตละไม่กี่วินาที หรือบางคนอาจเพิ่มเวลาให้นานขึ้นในครั้งถัดไปจาก 15-30 วินาที เป็น 40 วินาที 50 วินาที 1 นาที แต่ Plank นานสุดต้องไม่เกิน 2 นาที</p>
+    
+    <a class="back-button" href="file:///F:/cod/cod%20หน้าหลัก.html#file:///F:/cod/กระโดดตบ.html">Back to Menu</a>
+</div>
+
+<script>
+    // สร้างหิมะตก
+    function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.innerHTML = "❄";
+        snowflake.classList.add("snowflake");
+        document.body.appendChild(snowflake);
+
+        // กำหนดตำแหน่งแบบสุ่ม
+        const startLeft = Math.random() * window.innerWidth;
+        const duration = Math.random() * 5 + 5; // เวลาตก 5-10 วินาที
+        const size = Math.random() * 12 + 8; // ขนาดหิมะ 8-20px
+
+        snowflake.style.left = `${startLeft}px`;
+        snowflake.style.fontSize = `${size}px`;
+        snowflake.style.animationDuration = `${duration}s`;
+
+        // ลบหิมะเมื่ออนิเมชันจบ
+        setTimeout(() => {
+            snowflake.remove();
+        }, duration * 1000);
+    }
+
+    // สร้างหิมะทุกๆ 200ms
+    setInterval(createSnowflake, 200);
+</script>
+
+</body>
+</html>
